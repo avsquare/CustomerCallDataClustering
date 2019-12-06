@@ -29,10 +29,18 @@ Motivational video: https://www.youtube.com/watch?v=_d2_RWMsUKc
 ## Methodology
 Total usage was obtained by adding incoming and outgoing calls and sms alonng with internet usage.
 Elbow method was used to find out the appropriate number of clusters. This suggested using 4 clusters, however to better visualize we used 10 clusters.
+
 ![text](./Figures/ElbowPlot.png)
+
+
 The figures to identify categories of customers with characteristic total data usage behaviour was created using k-means
+
 ![Cluster Visual](./Figures/ClusterVisual.png)
- We found the top 20 countries after Italy with prominent activity.
- ![text](./Figures/CountryTotalActivity.png)
- To see the relative position of cluster with respect to cluster centers, we marked them in a single plot.
- ![text](./Figures/ClustersWithCenters.png)
+
+We found the top 20 countries after Italy with prominent activity.
+
+![text](./Figures/CountryTotalActivity.png)
+
+To see the relative position of cluster with respect to cluster centers, we marked them in a single plot.
+
+![text](./Figures/ClustersWithCenters.png)
