@@ -51,8 +51,8 @@ ggplot(clusterDF, aes(activity_time, total_activity)) +
                                   y = rep(modelObj$centers[,2],1000)),
              color = "red", size = 4, shape=3)
 
-countryDF[order(-countryDF$total_activity),]
-countryDF<-countryDF[order(-countryDF$total_activity),]
+#countryDF[order(-countryDF$total_activity),]
+#countryDF<-countryDF[order(-countryDF$total_activity),]
 countryMapping<-read.csv(file='CountryMapping.csv')
 #gsub("+","",as.character(factor(countryMapping$International.dialing)))
 countryMapping$newCode <- as.factor(gsub("-","",gsub("\\+", "", countryMapping$International.dialing)))
@@ -61,9 +61,9 @@ inputDF2<-merge(x=inputDF,y=countryMapping,by.x = "countrycode", by.y = "newCode
 #barplot(aggregate(total_activity ~ countrycode, countryDF, sum)$total_activity, 
 #        names.arg=aggregate(total_activity ~ countrycode, countryDF, sum)$countrycode)
 AgrCountr<-aggregate(total_activity ~ Country.code, inputDF2, sum)
-#AgrCountr<-AgrCountr[order(-AgrCountr$total_activity),]
+AgrCountr<-AgrCountr[order(-AgrCountr$total_activity),]
 
 
 barplot(AgrCountr[2:21,]$total_activity, 
-        names.arg=AgrCountr[2:21,]$ )
+        names.arg=AgrCountr[2:21,]$Country.code)
 
